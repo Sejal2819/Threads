@@ -28,7 +28,7 @@ interface Props {
   isComment?: boolean;
 }
 
-function ThreadCard({
+function Threadcard({
   id,
   currentUserId,
   parentId,
@@ -167,4 +167,4 @@ function ThreadCard({
   );
 }
 
-export default ThreadCard;
+export default Threadcard;

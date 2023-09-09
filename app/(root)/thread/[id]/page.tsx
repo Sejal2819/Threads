@@ -2,7 +2,7 @@ import { redirect } from "next/navigation";
 import { currentUser } from "@clerk/nextjs";
 
 import Comment from "@/components/forms/Comment";
-import ThreadCard from "@/components/cards/ThreadCard";
+import Threadcard from "@/components/cards/Threadcard";
 
 import { fetchUser } from "@/lib/actions/user.actions";
 import { fetchThreadById } from "@/lib/actions/thread.actions";
@@ -23,7 +23,7 @@ async function page({ params }: { params: { id: string } }) {
   return (
     <section className='relative'>
       <div>
-        <ThreadCard
+        <Threadcard
           id={thread._id}
           currentUserId={user.id}
           parentId={thread.parentId}
@@ -45,7 +45,7 @@ async function page({ params }: { params: { id: string } }) {
 
       <div className='mt-10'>
         {thread.children.map((childItem: any) => (
-          <ThreadCard
+          <Threadcard
             key={childItem._id}
             id={childItem._id}
             currentUserId={user.id}
